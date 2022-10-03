@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <title>Prediction</title>
+</head>
+
+<body>
+    <div class="container"><br>
+        <form action="{{url_for('prediction')}}" method="POST">
+        <b>Enter the feature details:</b><br>
+        <div class="row">
+            <div class="col">
+                Enter battery power in mAh <input type="text" id="power" name="power" class="form-control" placeholder=" " aria-label="power">
+            </div>
+            <div class="col">
+                Bluetooth supported? <br>
+                 <input type="radio" id="bluey" name="blue" value=1 checked>
+                 <label for="bluey">Yes</label>
+                 <input type="radio" id="bluen" name="blue" value=0>
+                 <label for="bluen">No</label><br>
+            </div>
+            <div class="col">
+                3G supported? <br>
+                 <input type="radio" id="tgy" name="tg" value=1 checked>
+                 <label for="tgy">Yes</label>
+                 <input type="radio" id="tgn" name="tg" value=0>
+                 <label for="tgn">No</label><br>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col">
+                Clock Speed <input type="text" id="clock" name="clock" class="form-control" placeholder=" " aria-label="clock">
+            </div>
+            <div class="col">
+                Dual-sim supported? <br>
+                 <input type="radio" id="dualy" name="dual" value=1 checked>
+                 <label for="dualy">Yes</label>
+                 <input type="radio" id="dualn" name="dual" value=0>
+                 <label for="dualn">No</label><br>
+            </div>
+            <div class="col">
+                Touch Screen supported? <br>
+                 <input type="radio" id="tsy" name="ts" value=1 checked>
+                 <label for="tsy">Yes</label>
+                 <input type="radio" id="tsn" name="ts" value=0>
+                 <label for="tsn">No</label><br>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col">
+                Front Camera Megapixels <input type="text" id="fc" name="fc" class="form-control" placeholder=" "
+                    aria-label="fc">
+            </div>
+            <div class="col">
+                4G supported? <br>
+                     <input type="radio" id="fgy" name="fg" value=1 checked>
+                     <label for="fgy">Yes</label>
+                     <input type="radio" id="fgn" name="fg" value=0>
+                     <label for="fgn">No</label><br>
+            </div>
+            <div class="col">
+                Wi-Fi supported? <br>
+                 <input type="radio" id="wfy" name="wf" value=1 checked>
+                 <label for="wfy">Yes</label>
+                 <input type="radio" id="wfn" name="wf" value=0>
+                 <label for="wfn">No</label><br>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col">
+                Select the number of processors
+                <select class="form-select" id="ncores" name="ncores" aria-label="ncores">
+                    <option value="1">Single Core</option>
+                    <option value="2">Dual Core</option>
+                    <option value="3">Triple Core</option>
+                    <option value="4">Quad Core</option>
+                    <option value="5">Penta Core </option>
+                    <option value="6">Hexa Core </option>
+                    <option value="7">Hepta Core </option>
+                    <option value="8">Octa Core </option>
+                  </select>
+            </div>
+        </div><br>
+
+        <div class="row">
+            <div class="col">
+                Mobile Depth in cm : <input type="text" id="mdep" name="mdep" class="form-control" placeholder=" " aria-label="mdep">
+            </div>
+            <div class="col">
+                Mobile Weight : <input type="text" id="mwt" name="mwt" class="form-control" placeholder=" "
+                    aria-label="mwt">
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col">
+                Primary Camera Megapixels : <input type="text" id="pc" name="pc" class="form-control" placeholder=" "
+                    aria-label="pc">
+            </div>
+            <div class="col">
+                Pixel Height : <input type="text" id="pht" name="pht" class="form-control" placeholder=" "
+                    aria-label="pht">
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col">
+                Pixel Width : <input type="text" id="pwt" name="pwt" class="form-control"
+                    placeholder=" " aria-label="pwt">
+            </div>
+            <div class="col">
+                RAM (in MB) : <input type="text" id="ram" name="ram" class="form-control" placeholder=" "
+                    aria-label="ram">
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col">
+                Mobile Screen Height (in cm) : <input type="text" id="sht" name="sht" class="form-control" placeholder=" "
+                    aria-label="sht">
+            </div>
+            <div class="col">
+                Mobile Screen Width (in cm) : <input type="text" id="swt" name="swt" class="form-control" placeholder=" "
+                    aria-label="swt">
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col">
+                Internal Memory (in Gigabytes)<input type="text" id="mem" name="mem" class="form-control" placeholder=" "
+                  aria-label="mem">
+            </div>
+            <div class="col">
+                Longest time after a single charge : <input type="text" id="talk" name="talk" class="form-control" placeholder=" "
+                    aria-label="talk">
+            </div>
+        </div><br>
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </form><br><br><br><br><br>
+    </div>
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
